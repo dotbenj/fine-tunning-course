@@ -42,23 +42,6 @@ def get_all_tags():
 
     return tags
 
-# def extract_card_names_from_tag_url(tag_url):
-#     response = requests.get(tag_url, headers=HEADERS)
-#     response.raise_for_status()
-#     soup = BeautifulSoup(response.text, "html.parser")
-
-#     card_links = soup.select('div[class^="CardImage_container"] > a[href]')
-#     card_names = []
-
-#     for a in card_links:
-#         href = a["href"]
-#         if href.startswith("/commanders/") or href.startswith("/cards/"):
-#             name_part = href.split("/")[-1]
-#             card_name = name_part.replace("-", " ").strip()
-#             card_names.append(card_name)
-
-#     return list(set(card_names))  # remove duplicates
-
 def extract_card_names_from_tag_url(tag_url):
     response = requests.get(tag_url, headers=HEADERS)
     response.raise_for_status()
